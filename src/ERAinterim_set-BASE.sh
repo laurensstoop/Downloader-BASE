@@ -34,7 +34,7 @@ do
     echo "$(timestamp): ERAinterim Set BASE standard Start ${V} for year ${Y}" # log
 
     # Do the Radiation component
-    echo "$(timestamp): Radiation"
+    echo "$(timestamp): Radiation" # FIX THIS WITH integrated stuff
     cdo -b 32 setattribute,ssrd@units="W/m^2" -divc,10800. -chname,ssr,ssrd -select,name=ssr $dir_in$fname$Y.nc $dir_out${fname}ssrd_$Y.nc                
 
     # Do the Temperature
