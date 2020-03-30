@@ -1,3 +1,4 @@
+# Laurens Stoop l.p.stoop@uu.nl / laurensstoop.nl
 # Modified from UCAR standard script
 #
 # authenticate - NOTE: You should only execute this command ONE TIME.

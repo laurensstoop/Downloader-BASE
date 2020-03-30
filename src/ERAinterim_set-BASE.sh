@@ -1,5 +1,4 @@
-# In this file the data of ERAinterim is set to BASE standard
-# Author: Laurens Stoop, UU/KNMI/TenneT
+# Laurens Stoop l.p.stoop@uu.nl / laurensstoop.nl
 
 # Create a timestamp
 timestamp() {
