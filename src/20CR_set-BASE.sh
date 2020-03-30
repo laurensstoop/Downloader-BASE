@@ -33,8 +33,8 @@ for Y in $(seq 1836 2015);do
     ncatted -O -a experiment,global,o,c,"Model: 20CR" -h /media/stoop/DataFiles/20CR/20CR-EU_BASE/20CR-EU_ssrd_$Y.nc
     ncatted -O -a author,global,a,c,"; Laurens Stoop, UU/KNMI/TenneT" -h /media/stoop/DataFiles/20CR/20CR-EU_BASE/20CR-EU_ssrd_$Y.nc
     ncatted -O -a email,global,a,c,"; l.p.stoop@uu.nl" -h /media/stoop/DataFiles/20CR/20CR-EU_BASE/20CR-EU_ssrd_$Y.nc
-    ncatted -O -a long_name,t2m,o,c,"Downward short-wave radiation flux masked for European region" -h /media/stoop/DataFiles/20CR/20CR-EU_BASE/20CR-EU_ssrd_$Y.nc
-    ncatted -O -a short_name,t2m,o,c,"ssrd" -h /media/stoop/DataFiles/20CR/20CR-EU_BASE/20CR-EU_ssrd_$Y.nc
+    ncatted -O -a long_name,ssrd,o,c,"Downward short-wave radiation flux masked for European region" -h /media/stoop/DataFiles/20CR/20CR-EU_BASE/20CR-EU_ssrd_$Y.nc
+    ncatted -O -a short_name,ssrd,o,c,"ssrd" -h /media/stoop/DataFiles/20CR/20CR-EU_BASE/20CR-EU_ssrd_$Y.nc
     ncatted -O -a history,global,d,, -h /media/stoop/DataFiles/20CR/20CR-EU_BASE/20CR-EU_ssrd_$Y.nc
 done
 
