@@ -22,23 +22,19 @@ done
 
 
 ### Run in the netcdf folder
-years='1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018'
-for Y in ${years} ;do
+for Y in $(seq 1958 2018);do 
     cdo mergetime fcst_phy2m.204_dswrf.reg_tl319.$Y*.nc /media/stoop/DataDrive/JRA55/vars/JRA55-EU_ssrd_$Y.nc
 done
 
-years='1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018'
-for Y in ${years} ;do
+for Y in $(seq 1958 2018);do 
     cdo mergetime fcst_surf.011_tmp.reg_tl319.$Y*.nc /media/stoop/DataDrive/JRA55/vars/JRA55-EU_t2m_$Y.nc
 done
 
-years='1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018'
-for Y in ${years} ;do
+for Y in $(seq 1958 2018);do 
     cdo mergetime fcst_surf.033_ugrd.reg_tl319.$Y*.nc /media/stoop/DataDrive/JRA55/vars/JRA55-EU_u10_$Y.nc
 done
 
-years='1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018'
-for Y in ${years} ;do
+for Y in $(seq 1958 2018);do 
     cdo mergetime fcst_surf.034_vgrd.reg_tl319.$Y*.nc /media/stoop/DataDrive/JRA55/vars/JRA55-EU_v10_$Y.nc
 done
 
@@ -49,8 +45,8 @@ done
 
 
 ### Run in the Vars folder
-years='1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018'
-for Y in ${years} ;do
+
+for Y in $(seq 1958 2018);do 
     # Fix the variables for the radiation
     cdo chname,dswrf,ssrd -settaxis,$Y-01-01,00:00:00,3hours JRA55-EU_ssrd_$Y.nc /media/stoop/DataDrive/JRA55/JRA55-EU_BASE/JRA55-EU_ssrd_$Y.nc
     # Rename the attributes and set the variables attributes for windspeed
@@ -62,8 +58,8 @@ for Y in ${years} ;do
     ncatted -O -a short_name,ssrd,o,c,"ssrd" -h /media/stoop/DataDrive/JRA55/JRA55-EU_BASE/JRA55-EU_ssrd_$Y.nc
 done
 
-years='1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018'
-for Y in ${years} ;do
+
+for Y in $(seq 1958 2018);do 
     # Fix the variables for the temperature
     cdo chname,2t,t2m -addc,-273.15 JRA55-EU_t2m_$Y.nc /media/stoop/DataDrive/JRA55/JRA55-EU_BASE/JRA55-EU_t2m_$Y.nc
     # Rename the attributes and set the variables attributes for windspeed
@@ -76,8 +72,8 @@ for Y in ${years} ;do
     ncatted -O -a units,t2m,o,c,"degC" -h /media/stoop/DataDrive/JRA55/JRA55-EU_BASE/JRA55-EU_t2m_$Y.nc
 done
 
-years='1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018'
-for Y in ${years} ;do
+
+for Y in $(seq 1958 2018);do 
     # Fix the variables for the windspeed
     cdo chname,10u,wspd -sqrt -add -sqr JRA55-EU_u10_$Y.nc -sqr JRA55-EU_u10_$Y.nc /media/stoop/DataDrive/JRA55/JRA55-EU_BASE/JRA55-EU_wspd_$Y.nc
     # Rename the attributes and set the variables attributes for windspeed
