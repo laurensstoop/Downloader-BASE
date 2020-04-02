@@ -19,7 +19,21 @@ for Y in $(seq 2008 2018) ;do
     done
 done
 
+#####
+# DOWA-EU
+#####
 
+### Run in the origin folder the following commandline
+month='01 02 03 04 05 06 07 08 09 10 11 12' 
+for Y in $(seq 2008 2017) ;do
+    for M in $month ;do
+        cdo mergetime ./$Y/$M/*/psl_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_psl_$Y$M.nc
+        cdo mergetime ./$Y/$M/*/rsds_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_rsds_$Y$M.nc
+        cdo mergetime ./$Y/$M/*/tas_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_t2m_$Y$M.nc
+        cdo mergetime ./$Y/$M/*/uas_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_u10_$Y$M.nc
+        cdo mergetime ./$Y/$M/*/vas_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_v10_$Y$M.nc
+    done
+done
 
 
 
