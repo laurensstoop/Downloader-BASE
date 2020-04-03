@@ -11,10 +11,13 @@ wget $cert_opt -O auth_status.rda.ucar.edu --save-cookies auth.rda.ucar.edu.$$ -
 #        the contents of the file 'auth_status.rda.ucar.edu'
 
 
+
+# The main loop prep
 hours='00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23'
 days='01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31'
 months='01 02 03 04 05 06 07 08 09 10 11 12'
-for Y in $(seq 1985 2005) ;do
+# run in chunks of 5 years (1985--2005)
+for Y in $(seq 2000 2005) ;do
     for M in $months ;do
         for D in $days ;do
             for H in $hours ;do
