@@ -135,7 +135,7 @@ done
 # DOWA-EU
 # Temperature
 month='01 02 03 04 05 06 07 08 09 10 11 12' 
-for Y in $(seq 2008 2018);do 
+for Y in $(seq 2008 2017);do 
     for M in $month ;do
         # Fix the variables for the temperature
         cdo chname,tas,t2m -addc,-273.15  ./combine/DOWA-EU_t2m_$Y$M.nc ./DOWA-EU_BASE/DOWA-EU_t2m_$Y$M.nc
@@ -154,7 +154,7 @@ done
 # DOWA-EU
 # ssrd
 month='01 02 03 04 05 06 07 08 09 10 11 12' 
-for Y in $(seq 2008 2018);do 
+for Y in $(seq 2008 2017);do 
     for M in $month ;do
         # Fix the variables for the temperature
         cdo chname,rsds,ssrd -shifttime,-30min  -divc,3600.  ./combine/DOWA-EU_rsds_$Y$M.nc ./DOWA-EU_BASE/DOWA-EU_ssrd_$Y$M.nc
@@ -174,7 +174,7 @@ done
 # DOWA-EU
 # wspd
 month='01 02 03 04 05 06 07 08 09 10 11 12' 
-for Y in $(seq 2008 2018);do 
+for Y in $(seq 2008 2017);do 
     for M in $month ;do
         # Fix the variables for the temperature
         cdo chname,uas,wspd -sqrt -add -sqr ./combine/DOWA-EU_u10_$Y$M.nc -add -sqr ./combine/DOWA-EU_v10_$Y$M.nc  ./combine/DOWA-EU_u10_$Y$M.nc ./DOWA-EU_BASE/DOWA-EU_wspd_$Y$M.nc
