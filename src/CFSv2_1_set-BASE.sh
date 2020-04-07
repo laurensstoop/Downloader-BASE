@@ -5,8 +5,8 @@
 
 # Radiation
 ### Run in the origin folder
-months='01 02 03 04 05 06 07 08 09 10 11 12'
-for Y in $(seq 2012 2019);do # 2011 2019);do  #1979 2010 
+months='04 05 06 07 08 09 10 11 12' # 01 02 03 
+for Y in $(seq 2011 2011);do # 2011 2019);do  #1979 2010 
     for M in $months ; do
         # Convert from Grib2 data to netcdf
         cdo -f nc copy -sellonlatbox,-31,74.25,34.5,80 /media/stoop/DataFiles/CFSv2/origin/dswsfc.cdas1.$Y$M.grb2 /media/stoop/DataStager/TEMP/CFSv2/dswsfc.cdas1.$Y$M.nc
@@ -34,8 +34,8 @@ done
 
 # temperature
 ### Run in the origin folder
-months='01 02 03 04 05 06 07 08 09 10 11 12'
-for Y in $(seq 2012 2019);do # 2011 2019);do  #1979 2010 
+months='04 05 06 07 08 09 10 11 12' # 01 02 03 
+for Y in $(seq 2011 2011);do # 2011 2019);do  #1979 2010 
     for M in $months ; do
         # Convert from Grib2 data to netcdf
         cdo -f nc copy -sellonlatbox,-31,74.25,34.5,80 /media/stoop/DataFiles/CFSv2/origin/tmp2m.cdas1.$Y$M.grb2 /media/stoop/DataStager/TEMP/CFSv2/tmp2m.cdas1.$Y$M.nc
@@ -64,8 +64,8 @@ done
 
 # wind speed
 ### Run in the origin folder
-months='01 02 03 04 05 06 07 08 09 10 11 12'
-for Y in $(seq 2012 2019);do # 2011 2019);do  #1979 2010 
+months='04 05 06 07 08 09 10 11 12' # 01 02 03 
+for Y in $(seq 2011 2011);do # 2011 2019);do  #1979 2010 
     for M in $months ; do
         # Convert from Grib2 data to netcdf
         cdo -f nc copy -sellonlatbox,-31,74.25,34.5,80 /media/stoop/DataFiles/CFSv2/origin/wnd10m.cdas1.$Y$M.grb2 /media/stoop/DataStager/TEMP/CFSv2/wnd10m.cdas1.$Y$M.nc

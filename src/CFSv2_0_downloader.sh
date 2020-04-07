@@ -116,7 +116,8 @@ wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/da
 wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2019/dswsfc.cdas1.201909.grb2
 wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2019/dswsfc.cdas1.201910.grb2
 wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2019/dswsfc.cdas1.201911.grb2
-wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2019/dswsfc.cdas1.201912.grb2wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2011/tmp2m.gdas.201101.grb2
+wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2019/dswsfc.cdas1.201912.grb2
+wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2011/tmp2m.gdas.201101.grb2
 wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2011/tmp2m.gdas.201102.grb2
 wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2011/tmp2m.gdas.201103.grb2
 wget $cert_opt $opts --load-cookies auth.rda.ucar.edu.$$ https://rda.ucar.edu/data/ds094.1/2011/tmp2m.cdas1.201104.grb2
