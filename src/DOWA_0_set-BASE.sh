@@ -1,7 +1,10 @@
 # Laurens Stoop l.p.stoop@uu.nl / laurensstoop.nl
 #
 # Not very clean, but it works. 
-
+#
+# Download of DOWA data from the KNMI data portal
+# DOWO ftp://data.knmi.nl/download/dowa_netcdf_daily_3d/1/noversion/
+# DOWA-extra ftp://data.knmi.nl/download/dowa_netcdf_daily_3d_extra/1/noversion/
 
 #####
 # DOWA-NL

@@ -1,6 +1,7 @@
 # Laurens Stoop l.p.stoop@uu.nl/ laurensstoop.nl
 #
-# 
+# Download of 20CR was done manually (reasonably quick method)
+
 
 ### Run in the origin folder the following commandline, the selparam remove the single height (sfc/2m/10m) info from the dimensions
 for filename in ./air* ;do
