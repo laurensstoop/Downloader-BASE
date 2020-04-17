@@ -11,7 +11,7 @@ wget $cert_opt -O auth_status.rda.ucar.edu --save-cookies auth.rda.ucar.edu.$$ -
 #        the contents of the file 'auth_status.rda.ucar.edu'
 
 #stage='/media/stoop/DataStager'
-stage='/home/stoop/TEMP0/CFDDA'
+stage='/home/stoop/TEMP3/CFDDA'
 
 echo "Working in $stage"
 
@@ -21,7 +21,7 @@ days='01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
 months='01 02 03 04 05 06 07 08 09 10 11 12'
 #years='1988 1989 1991 1992 1993 1994 1996 1997 1998 1999 2001 2002 2003 2004 2005'
 # run in chunks of 5 years (1985--2005)
-for Y in $(seq 1985 1999) ;do
+for Y in $(seq 2005 2005) ;do
     for M in $months ;do
 
         # test if the file exist for the monthly data if not, then run montly bit
@@ -30,7 +30,7 @@ for Y in $(seq 1985 1999) ;do
         else 
             for D in $days ;do
                 for H in $hours ;do
-                    if [ -e $stage/TEMP/CFDDA/vars/cfdda_vars_$Y$M$D$H.nc ]; then
+                    if [ -e $stage/vars/cfdda_vars_$Y$M$D$H.nc ]; then
                         echo "File exists for day and hour $Y-$M-$D:$H"
                     else
                         # The brackets make it that the follow-up is only done if the fetch works
