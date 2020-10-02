@@ -1,8 +1,10 @@
 # Downloader-BASE
 
-Version 0.1.0
+Version 1.0.0
 
-A short description of your project
+This Git contains a set of scripts intended to download various datasets from various climate modelling projects. 
+
+The project changes the native climate model output format into the NetCDF4 standard for the European region.
 
 
 ## Project organization
