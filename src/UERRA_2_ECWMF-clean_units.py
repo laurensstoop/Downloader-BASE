@@ -22,11 +22,11 @@ gcm='Harmonie' # option = Harmonie (eswi), UM (egrr)
 type_of_model='fc' # option= fc/an
 
 # define the storage location
-path_from = '/media/stoop/DataFiles/UERRA/origin_nc/'+gcm+'/'
+path_from = '/media/DataFiles/UERRA/origin_nc/'+gcm+'/'
 
 
 # set the save path
-path_save = '/media/stoop/DataFiles/UERRA/EU/'+gcm+'/'
+path_save = '/media/DataFiles/UERRA/EU/'+gcm+'/'
 
 
 # define the variables to run over (short name)

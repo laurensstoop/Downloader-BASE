@@ -14,11 +14,11 @@
 month='01 02 03 04 05 06 07 08 09 10 11 12' 
 for Y in $(seq 2008 2018) ;do
     for M in $month ;do
-        cdo select,name=ta -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_t2m_$Y$M.nc
-        cdo select,name=wdir -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_wdir_$Y$M.nc
-        cdo select,name=wspeed -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_wspd_$Y$M.nc
-        cdo select,name=p -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_mpsl_$Y$M.nc
-        cdo select,name=hur -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_hur_$Y$M.nc
+        cdo select,name=ta -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_t2m_$Y$M.nc
+        cdo select,name=wdir -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_wdir_$Y$M.nc
+        cdo select,name=wspeed -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_wspd_$Y$M.nc
+        cdo select,name=p -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_mpsl_$Y$M.nc
+        cdo select,name=hur -mergetime ./$Y/$M/*/DOWA_40h12tg2_fERA5_NETHERLANDS.NL_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-NL/combine/DOWA-NL_hur_$Y$M.nc
     done
 done
 
@@ -30,11 +30,11 @@ done
 month='01 02 03 04 05 06 07 08 09 10 11 12' 
 for Y in $(seq 2008 2017) ;do
     for M in $month ;do
-        cdo mergetime ./$Y/$M/*/psl_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_psl_$Y$M.nc
-        cdo mergetime ./$Y/$M/*/rsds_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_rsds_$Y$M.nc
-        cdo mergetime ./$Y/$M/*/tas_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_t2m_$Y$M.nc
-        cdo mergetime ./$Y/$M/*/uas_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_u10_$Y$M.nc
-        cdo mergetime ./$Y/$M/*/vas_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/stoop/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_v10_$Y$M.nc
+        cdo mergetime ./$Y/$M/*/psl_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_psl_$Y$M.nc
+        cdo mergetime ./$Y/$M/*/rsds_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_rsds_$Y$M.nc
+        cdo mergetime ./$Y/$M/*/tas_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_t2m_$Y$M.nc
+        cdo mergetime ./$Y/$M/*/uas_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_u10_$Y$M.nc
+        cdo mergetime ./$Y/$M/*/vas_DOWA_40h12tg2_fERA5_NETHERLANDS_$Y$M*_v1.0.nc /media/DataDrive/DOWA/DOWA-EU/combine/DOWA-EU_v10_$Y$M.nc
     done
 done
 

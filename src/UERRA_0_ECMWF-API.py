@@ -36,7 +36,7 @@ gcm_code='edzw'
 type_of_model='enda' # option= oper/enda
 
 # define the storage location
-file_path = '/media/stoop/DataFiles/UERRA/origin/'+gcm+'/'
+file_path = '/media/DataFiles/UERRA/origin/'+gcm+'/'
 
 def retrieve_uerra_eswi():
     """

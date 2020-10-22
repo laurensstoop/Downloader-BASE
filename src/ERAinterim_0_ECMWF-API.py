@@ -29,7 +29,7 @@ import datetime as dt
 server = ECMWFDataServer()
 
 # define the storage location
-file_path = '/media/stoop/DataDrive/ERAinterim/'
+file_path = '/media/DataDrive/ERAinterim/'
 
 # The years we want to download
 years = [   

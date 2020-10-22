@@ -15,9 +15,9 @@ exec 3>&1 1>>${logfile} 2>&1
 
 
 # Set the directories
-dir_in="/media/stoop/DataFiles/UERRA/origin/COSMO/"
-dir_temp="/media/stoop/DataStager/UERRA/"
-dir_out="/media/stoop/DataFiles/UERRA/origin_nc/COSMO/"
+dir_in="/media/DataFiles/UERRA/origin/COSMO/"
+dir_temp="/media/DataStager/UERRA/"
+dir_out="/media/DataFiles/UERRA/origin_nc/COSMO/"
 
 # The variables to run over
 var='wspd' # ssrd t2m wspd'

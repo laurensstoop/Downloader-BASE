@@ -20,7 +20,7 @@ import datetime as dt
 import os.path
 
 # define the storage location
-file_path = '/media/stoop/DataDrive/ERA5/origin/'
+file_path = '/media/DataDrive/ERA5/origin/'
 
 # define the variables to run over (long name)
 variables = [

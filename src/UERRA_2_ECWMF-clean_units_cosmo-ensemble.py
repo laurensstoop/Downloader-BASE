@@ -22,10 +22,10 @@ gcm='COSMO' # option = Harmonie (eswi), UM (egrr)
 type_of_model='enda' # option= fc/an
 
 # define the storage location
-path_from = '/media/stoop/DataFiles/UERRA/origin_nc/'+gcm+'/'
+path_from = '/media/DataFiles/UERRA/origin_nc/'+gcm+'/'
 
 # set the save path
-path_save = '/media/stoop/DataFiles/UERRA-COSMO-EU_BASE/'
+path_save = '/media/DataFiles/UERRA-COSMO-EU_BASE/'
 
 
 # define the variables to run over (short name)

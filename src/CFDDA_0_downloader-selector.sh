@@ -10,8 +10,8 @@ wget $cert_opt -O auth_status.rda.ucar.edu --save-cookies auth.rda.ucar.edu.$$ -
 # NOTE:  if you get 403 Forbidden errors when downloading the data files, check
 #        the contents of the file 'auth_status.rda.ucar.edu'
 
-#stage='/media/stoop/DataStager'
-stage='/home/stoop/TEMP3/CFDDA' # Different versions of the TEMP folder where used
+stage='/media/DataStager1/TEMP/'
+
 
 echo "Working in $stage"
 
@@ -25,7 +25,7 @@ for Y in $(seq 1985 2005) ;do
     for M in $months ;do
 
         # test if the file exist for the monthly data if not, then run montly bit
-        if [ -e /media/stoop/DataFiles/CFDDA/merge/cfdda_merge_$Y$M.nc ]; then
+        if [ -e /media/DataFiles/CFDDA/merge/cfdda_merge_$Y$M.nc ]; then
             echo "File exists for $Y-$M"
         else 
             for D in $days ;do
@@ -47,7 +47,7 @@ for Y in $(seq 1985 2005) ;do
             done
             {
             # Merge the hours for a month in a file
-            cdo -b 32 mergetime $stage/vars/cfdda_vars_$Y$M*.nc /media/stoop/DataFiles/CFDDA/merge/cfdda_merge_$Y$M.nc &&
+            cdo -b 32 mergetime $stage/vars/cfdda_vars_$Y$M*.nc /media/DataFiles/CFDDA/merge/cfdda_merge_$Y$M.nc &&
             #Now delete previous
             rm $stage/vars/cfdda_vars_$Y$M*.nc
             }

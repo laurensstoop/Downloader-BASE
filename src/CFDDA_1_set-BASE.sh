@@ -3,14 +3,14 @@
 # 
 
 
-stage='/home/stoop/TEMP0/CFDDA'
+stage='/media/DataStager1/TEMP/CFDDA'
 # Radiation
 ### Run in the origin folder
 months='01 02 03 04 05 06 07 08 09 10 11 12'
 for Y in $(seq 1985 2005);do  #1985 2005 
     for M in $months ; do
         # Convert from Grib2 data to netcdf
-        cdo select,name=swdown -sellonlatbox,-31,74.25,34.5,80 /media/stoop/DataFiles/CFDDA/origin/cfdda_merge_${Y}${M}.nc $stage/temp_${Y}${M}.nc
+        cdo select,name=swdown -sellonlatbox,-31,74.25,34.5,80 /media/DataFiles/CFDDA/origin/cfdda_merge_${Y}${M}.nc $stage/temp_${Y}${M}.nc
         # Set the correct name
         cdo chname,swdown,ssrd $stage/temp_${Y}${M}.nc $stage/temp2_${Y}${M}.nc
     done
@@ -23,7 +23,7 @@ for Y in $(seq 1985 2005);do  #1985 2005
     ncatted -O -a email,global,a,c,"; l.p.stoop@uu.nl" -h $stage/CFDDA-EU_ssrd_$Y.nc
     ncatted -O -a long_name,ssrd,o,c,"Downward short-wave radiation flux masked for European region" -h $stage/CFDDA-EU_ssrd_$Y.nc
     ncatted -O -a short_name,ssrd,o,c,"ssrd" -h $stage/CFDDA-EU_ssrd_$Y.nc
-    ncatted -a history,global,d,, -h $stage/CFDDA-EU_ssrd_$Y.nc /media/stoop/DataFiles/CFDDA-EU_BASE/CFDDA-EU_ssrd_$Y.nc
+    ncatted -a history,global,d,, -h $stage/CFDDA-EU_ssrd_$Y.nc /media/DataFiles/CFDDA-EU_BASE/CFDDA-EU_ssrd_$Y.nc
     # Clean up 
     rm $stage/temp_$Y*.nc
     rm $stage/temp2_$Y*.nc
@@ -32,7 +32,7 @@ done
 
 
 
-stage='/home/stoop/TEMP1/CFDDA'
+stage='/media/DataStager1/TEMP/CFDDA'
 # temperature
 ### Run in the origin folder
 months='01 02 03 04 05 06 07 08 09 10 11 12'
@@ -62,7 +62,7 @@ done
 
 
 
-stage='/home/stoop/TEMP2/CFDDA'
+stage='/media/DataStager1/TEMP/CFDDA'
 # wind speed
 ### Run in the origin folder
 months='01 02 03 04 05 06 07 08 09 10 11 12'

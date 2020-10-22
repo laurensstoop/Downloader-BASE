@@ -7,9 +7,9 @@
 
 M='HadGEM'
 C='PD'
-drive='/media/stoop/DataGate3'
+drive='/media/DataGate3'
 source_dir="HiWAVES3/Europe/HiWAVES3_${M}2-ES_${C}"
-temp_dir='/home/stoop/TEMP3/HiWAVES3'
+temp_dir='/home/TEMP3/HiWAVES3'
 starts='01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16' 
 runs='00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24' 
 

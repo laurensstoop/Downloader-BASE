@@ -13,8 +13,8 @@ gcm='COSMO' # option = Harmonie (eswi), UM (egrr), COMSO (edzw)
 type_of_model='enda' # option= prod/enda
 
 # Set the directories
-dir_in="/media/stoop/DataFiles/UERRA/origin/${gcm}/"
-dir_out="/media/stoop/DataFiles/UERRA/origin_nc/${gcm}/"
+dir_in="/media/DataFiles/UERRA/origin/${gcm}/"
+dir_out="/media/DataFiles/UERRA/origin_nc/${gcm}/"
 
 # The variables to run over
 models='00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20' 
