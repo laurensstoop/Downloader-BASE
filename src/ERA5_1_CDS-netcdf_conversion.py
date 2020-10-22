@@ -20,18 +20,20 @@ import os.path
 import xarray as xr
 
 # define the storage location
-path_from = '/media/stoop/DataDrive/ERA5/origin/'
-path_save = '/media/stoop/DataDrive/ERA5/origin_nc/'
+path_from = '/media/DataDrive/ERA5/origin/'
+path_save = '/media/DataDrive/ERA5/origin_nc/'
 
 
 # define the variables to run over (short name)
 variable_names = [
-        'd2m',
+        'fal',
+        'fsr',
+#        'd2m',
 #        'u10', 
 #        'v10', 
 #        'u100m', 
 #        'v100m', 
-        't2m', 
+#        't2m', 
 #        'mpsl', 
 #        'ssrd',
 #        'fdir'   
@@ -52,7 +54,7 @@ years = [
             '2009','2010','2011',
             '2012','2013','2014',
             '2015','2016','2017',
-            '2018'
+            '2018','2019'
         ]
 
 

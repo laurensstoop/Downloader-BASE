@@ -20,28 +20,33 @@ import datetime as dt
 import os.path
 
 # define the storage location
-file_path = '/media/stoop/DataDrive/ERA5/origin/'
+#file_path = '/media/DataDrive/ERA5/origin/'
+file_path = '/media/DataStager1/TEMP/ERA5/origin/'
 
 # define the variables to run over (long name)
 variables = [   
-            '2m_dewpoint_temperature',
+            'forecast_albedo', 
+            'forecast_surface_roughness'
+#            '2m_dewpoint_temperature',
 #            '10m_u_component_of_wind',
 #            '10m_v_component_of_wind',
 #            '100m_u_component_of_wind',
 #            '100m_v_component_of_wind',
-            '2m_temperature',
+#            '2m_temperature',
 #            'mean_sea_level_pressure',
 #            'surface_solar_radiation_downwards',
 #            'total_sky_direct_solar_radiation_at_surface'
             ]
 # define the variables to run over (short name)
 variable_names = [
-        'd2m',
+        'fal',
+        'fsr'
+#        'd2m',
 #        'u10', 
 #        'v10', 
 #        'u100m', 
 #        'v100m', 
-        't2m', 
+#        't2m', 
 #        'mpsl', 
 #        'ssrd',
 #        'fdir'   
@@ -49,7 +54,8 @@ variable_names = [
 
 # The years we want to download
 years = [   
-            '1979','1980','1981',
+#            '1979',
+            '1980','1981',
             '1982','1983','1984',
             '1985','1986','1987',
             '1988','1989','1990',

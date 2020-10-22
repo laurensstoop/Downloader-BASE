@@ -17,15 +17,17 @@ import os.path
 import xarray as xr
 
 # define the storage location
-path_from = '/media/stoop/DataDrive/ERA5/origin_nc/'
-path_save = '/media/stoop/DataDrive/ERA5/europe/'
+path_from = '/media/DataStager1/TEMP/ERA5/origin_nc/'
+path_save = '/media/DataStager1/TEMP/ERA5/europe/'
 
 
 # define the variables to run over (short name)
 variable_names = [
-        'd2m',
-        't2m',
-        'rh',
+        'fal',
+        'fsr',
+#        'd2m',
+#        't2m',
+#        'rh',
 #        'u10', 
 #        'v10', 
 #        'u100m', 

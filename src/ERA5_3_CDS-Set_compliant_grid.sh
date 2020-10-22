@@ -14,9 +14,9 @@ timestamp() {
 
 ### Setting everything up
 # Set the directories
-dir_in="/media/stoop/DataDrive/ERA5/europe/"
-dir_calc="/media/stoop/DataStager/CDS/"
-dir_out="/media/stoop/DataDrive/ERA5/ERA5-EU/"
+dir_in="/media/DataStager1/TEMP/ERA5/europe/"
+dir_calc="/media/DataStager1/TEMP/ERA5/CDS/"
+dir_out="/media/DataDrive/ERA5/ERA5-EU_BASE/"
 
 # The variables to run over
 var='t2m d2m rh' #'ssrd t2m wspd100m wspd fdif fdir mpsl d2m rh'
