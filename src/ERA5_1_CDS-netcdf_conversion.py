@@ -20,8 +20,8 @@ import os.path
 import xarray as xr
 
 # define the storage location
-path_from = '/media/DataDrive/ERA5/origin/'
-path_save = '/media/DataDrive/ERA5/origin_nc/'
+path_from = '/media/DataStager1/TEMP/ERA5/origin/'
+path_save = '/media/DataStager1/TEMP/ERA5/origin_nc/'
 
 
 # define the variables to run over (short name)

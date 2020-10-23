@@ -27,7 +27,7 @@ file_path = '/media/DataStager1/TEMP2/ERA5/origin/'
 variables = [   
             # 'forecast_albedo', 
             'forecast_surface_roughness',
-            '2m_dewpoint_temperature',
+            # '2m_dewpoint_temperature',
             # '10m_u_component_of_wind',
             # '10m_v_component_of_wind',
             # '100m_u_component_of_wind',
@@ -41,7 +41,7 @@ variables = [
 variable_names = [
         # 'fal',
         'fsr',
-        'd2m',
+        # 'd2m',
         # 'u10', 
         # 'v10', 
         # 'u100m', 
@@ -54,7 +54,8 @@ variable_names = [
 
 # The years we want to download
 years = [   
-            # '1979','1980','1981',
+            '1979',
+            # '1980','1981',
             # '1982','1983','1984',
             # '1985','1986','1987',
             # '1988','1989','1990',
@@ -68,7 +69,7 @@ years = [
             # '2012','2013','2014',
             # '2015','2016','2017',
             # '2018'
-            '2019'
+            # '2019'
         ]
 
 # The format of the data
