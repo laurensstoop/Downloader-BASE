@@ -23,18 +23,17 @@ path_save = '/media/DataStager1/TEMP/ERA5/europe/'
 
 # define the variables to run over (short name)
 variable_names = [
-        'fal',
+        # 'd2m',
+        # 'fal',
+        # 'fdir',
         'fsr',
-#        'd2m',
-#        't2m',
-#        'rh',
-#        'u10', 
-#        'v10', 
-#        'u100m', 
-#        'v100m', 
-#        'mpsl', 
-#        'ssrd',
-#        'fdir'  
+        # 'mpsl', 
+        # 'ssrd', 
+        # 't2m', 
+        # 'wspd',
+        # 'wspd100m',
+        # 'rh',
+        # 'fdif'
         ]
 
 # The years we want to download
@@ -52,7 +51,8 @@ years = [
             '2009','2010','2011',
             '2012','2013','2014',
             '2015','2016','2017',
-            '2018'
+            '2018', 
+            # '2019'
         ]
 
 
@@ -96,8 +96,8 @@ for year in years:
             if var_name == 'wspd':
                 
                 # Open the data
-                ds_a = xr.open_mfdataset(path_from+'ERA5-EU_u10_'+year+'.nc')
-                ds_b = xr.open_mfdataset(path_from+'ERA5-EU_v10_'+year+'.nc')
+                ds_a = xr.open_dataset(path_from+'ERA5-EU_u10_'+year+'.nc')
+                ds_b = xr.open_dataset(path_from+'ERA5-EU_v10_'+year+'.nc')
                 
                 # We load the files
                 ds_a.load()
@@ -128,8 +128,8 @@ for year in years:
             elif var_name == 'wspd100m':
                 
                 # Open the datas
-                ds_a = xr.open_mfdataset(path_from+'ERA5-EU_u100m_'+year+'.nc')
-                ds_b = xr.open_mfdataset(path_from+'ERA5-EU_v100m_'+year+'.nc')
+                ds_a = xr.open_dataset(path_from+'ERA5-EU_u100m_'+year+'.nc')
+                ds_b = xr.open_dataset(path_from+'ERA5-EU_v100m_'+year+'.nc')
                                 
                 # We load the files
                 ds_a.load()
@@ -158,7 +158,7 @@ for year in years:
             elif var_name == 't2m' or var_name == 'd2m':
                 
                 # Open the file
-                ds = xr.open_mfdataset(path_from+'ERA5-EU_'+var_name+'_'+year+'.nc')
+                ds = xr.open_dataset(path_from+'ERA5-EU_'+var_name+'_'+year+'.nc')
             
                 # We load the files
                 ds.load()
@@ -178,12 +178,30 @@ for year in years:
                 ds2[var_name].attrs.update(
                         units = 'degree C')
                 
+            # Catch the Albedo and surface roughness
+            elif var_name == 'fal' or var_name ==  'fsr':
+                
+                # Open the file
+                ds = xr.open_dataset(path_from+'ERA5-EU_'+var_name+'_'+year+'.nc')
+            
+                # We load the files
+                ds.load()
+                
+                # We drop useless variables
+                ds2 = ds.drop([ 'step', 'number', 'surface', 'valid_time'])
+                
+                # Update the time variable attributes
+                ds2.time.attrs.update(
+                        long_name = 'time',
+                        standard_name = 'time')
+                          
+                                
             # Catch the humidity
             elif var_name == 'rh':
                 
                 # Open the file
-                t2m = xr.open_mfdataset(path_save+'ERA5-EU_t2m_'+year+'.nc')
-                d2m = xr.open_mfdataset(path_save+'ERA5-EU_d2m_'+year+'.nc')
+                t2m = xr.open_dataset(path_save+'ERA5-EU_t2m_'+year+'.nc')
+                d2m = xr.open_dataset(path_save+'ERA5-EU_d2m_'+year+'.nc')
             
                 # We load the files
                 t2m.load()
@@ -208,7 +226,7 @@ for year in years:
             elif var_name == 'mpsl':
                 
                 # Open the file
-                ds = xr.open_mfdataset(path_from+'ERA5-EU_mpsl_'+year+'.nc')
+                ds = xr.open_dataset(path_from+'ERA5-EU_mpsl_'+year+'.nc')
             
                 # We load the files
                 ds.load()
@@ -235,7 +253,7 @@ for year in years:
             elif var_name == 'ssrd' or var_name == 'fdir':
                 
                 # Open the file
-                ds = xr.open_mfdataset(path_from+'ERA5-EU_'+var_name+'_'+year+'.nc')
+                ds = xr.open_dataset(path_from+'ERA5-EU_'+var_name+'_'+year+'.nc')
             
                 # We load the files
                 ds.load()
@@ -270,8 +288,8 @@ for year in years:
             elif var_name == 'fdif':
                 
                 # Open the datas
-                ds_a = xr.open_mfdataset(path_save+'ERA5-EU_ssrd_'+year+'.nc')
-                ds_b = xr.open_mfdataset(path_save+'ERA5-EU_fdir_'+year+'.nc')
+                ds_a = xr.open_dataset(path_save+'ERA5-EU_ssrd_'+year+'.nc')
+                ds_b = xr.open_dataset(path_save+'ERA5-EU_fdir_'+year+'.nc')
                                 
                 # We load the files
                 ds_a.load()
@@ -293,7 +311,7 @@ for year in years:
             
             # Update the general definitions
             ds2.attrs.update(
-                    download_date = '19 june 2019',
+                    download_date = '24 october 2020',
                     author = 'Laurens Stoop',
                     email = 'l.p.stoop@uu.nl',
                     affiliation = 'Utrecht University (UU) & Royal Dutch Meteorological Institute (KNMI) & TenneT')
@@ -306,6 +324,9 @@ for year in years:
             if var_name == 'wspd' or var_name =='wspd100m' or var_name =='fdif':
                 ds_a.close()
                 ds_b.close()
+            elif var_name == 'rh':
+                t2m.close()
+                d2m.close()
             else:    
                 ds.close()
 

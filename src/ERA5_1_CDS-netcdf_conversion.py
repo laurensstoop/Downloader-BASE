@@ -29,7 +29,7 @@ variable_names = [
         # 'd2m',
         'fal',
         # 'fdir',
-        'fsr',
+        # 'fsr',
         # 'mpsl', 
         # 'ssrd', 
         # 't2m', 
