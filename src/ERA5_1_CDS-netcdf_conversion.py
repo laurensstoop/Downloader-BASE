@@ -26,17 +26,17 @@ path_save = '/media/DataStager1/TEMP/ERA5/origin_nc/'
 
 # define the variables to run over (short name)
 variable_names = [
+        # 'd2m',
         'fal',
+        # 'fdir',
         'fsr',
-#        'd2m',
-#        'u10', 
-#        'v10', 
-#        'u100m', 
-#        'v100m', 
-#        't2m', 
-#        'mpsl', 
-#        'ssrd',
-#        'fdir'   
+        # 'mpsl', 
+        # 'ssrd', 
+        # 't2m', 
+        # 'u10', 
+        # 'u100m', 
+        # 'v10', 
+        # 'v100m' 
         ]
 
 # The years we want to download
@@ -54,7 +54,8 @@ years = [
             '2009','2010','2011',
             '2012','2013','2014',
             '2015','2016','2017',
-            '2018','2019'
+            '2018',
+            # '2019'
         ]
 
 
@@ -92,7 +93,7 @@ for year in years:
                 
             # We open the files
             print('NOTIFY (1/2): Get the file')
-            ds = xr.open_mfdataset(path_from+'ERA5-EU_'+var_name+'_'+year+'.grib', engine='cfgrib', decode_cf=True)
+            ds = xr.open_mfdataset(path_from+'ERA5-EU_'+var_name+'_'+year+'.grib',combine='by_coords', engine='cfgrib', decode_cf=True)
             
             # We load the files
             ds.load()

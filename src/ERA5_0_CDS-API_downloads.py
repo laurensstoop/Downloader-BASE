@@ -25,31 +25,31 @@ file_path = '/media/DataStager1/TEMP2/ERA5/origin/'
 
 # define the variables to run over (long name)
 variables = [   
-            # 'forecast_albedo', 
-            'forecast_surface_roughness',
             # '2m_dewpoint_temperature',
-            # '10m_u_component_of_wind',
-            # '10m_v_component_of_wind',
-            # '100m_u_component_of_wind',
-            # '100m_v_component_of_wind',
-            # '2m_temperature',
+            # 'forecast_albedo', 
+            # 'total_sky_direct_solar_radiation_at_surface',
+            'forecast_surface_roughness',
             # 'mean_sea_level_pressure',
             # 'surface_solar_radiation_downwards',
-            # 'total_sky_direct_solar_radiation_at_surface'
+            # '2m_temperature',
+            # '10m_u_component_of_wind',
+            # '100m_u_component_of_wind',
+            # '10m_v_component_of_wind',
+            # '100m_v_component_of_wind'
             ]
 # define the variables to run over (short name)
 variable_names = [
-        # 'fal',
+        'd2m',
+        'fal',
+        'fdir',
         'fsr',
-        # 'd2m',
-        # 'u10', 
-        # 'v10', 
-        # 'u100m', 
-        # 'v100m', 
-        # 't2m', 
-        # 'mpsl', 
-        # 'ssrd',
-        # 'fdir'   
+        'mpsl', 
+        'ssrd', 
+        't2m', 
+        'u10', 
+        'u100m', 
+        'v10', 
+        'v100m' 
         ]
 
 # The years we want to download
