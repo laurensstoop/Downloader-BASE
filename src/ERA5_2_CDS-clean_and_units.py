@@ -17,23 +17,23 @@ import os.path
 import xarray as xr
 
 # define the storage location
-path_from = '/media/DataStager1/TEMP/ERA5/origin_nc/'
-path_save = '/media/DataStager1/TEMP/ERA5/europe/'
+path_from = '/media/DataStager1/ERA5/origin_nc/'
+path_save = '/media/DataStager1/ERA5/europe/'
 
 
 # define the variables to run over (short name)
 variable_names = [
-        # 'd2m',
-        # 'fal',
-        # 'fdir',
+        'd2m',
+        'fal',
+        'fdir',
         'fsr',
-        # 'mpsl', 
-        # 'ssrd', 
-        # 't2m', 
-        # 'wspd',
-        # 'wspd100m',
-        # 'rh',
-        # 'fdif'
+        'mpsl', 
+        'ssrd', 
+        't2m', 
+        'wspd',
+        'wspd100m',
+        'rh',
+        'fdif'
         ]
 
 # The years we want to download
@@ -51,8 +51,7 @@ years = [
             '2009','2010','2011',
             '2012','2013','2014',
             '2015','2016','2017',
-            '2018', 
-            # '2019'
+            '2018','2019'
         ]
 
 

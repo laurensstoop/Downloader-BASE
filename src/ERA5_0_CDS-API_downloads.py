@@ -21,21 +21,21 @@ import os.path
 
 # define the storage location
 #file_path = '/media/DataDrive/ERA5/origin/'
-file_path = '/media/DataStager1/TEMP2/ERA5/origin/'
+file_path = '/media/DataStager1/ERA5/origin/'
 
 # define the variables to run over (long name)
 variables = [   
-            # '2m_dewpoint_temperature',
-            # 'forecast_albedo', 
-            # 'total_sky_direct_solar_radiation_at_surface',
+            '2m_dewpoint_temperature',
+            'forecast_albedo', 
+            'total_sky_direct_solar_radiation_at_surface',
             'forecast_surface_roughness',
-            # 'mean_sea_level_pressure',
-            # 'surface_solar_radiation_downwards',
-            # '2m_temperature',
-            # '10m_u_component_of_wind',
-            # '100m_u_component_of_wind',
-            # '10m_v_component_of_wind',
-            # '100m_v_component_of_wind'
+            'mean_sea_level_pressure',
+            'surface_solar_radiation_downwards',
+            '2m_temperature',
+            '10m_u_component_of_wind',
+            '100m_u_component_of_wind',
+            '10m_v_component_of_wind',
+            '100m_v_component_of_wind'
             ]
 # define the variables to run over (short name)
 variable_names = [
@@ -54,22 +54,20 @@ variable_names = [
 
 # The years we want to download
 years = [   
-            '1979',
-            # '1980','1981',
-            # '1982','1983','1984',
-            # '1985','1986','1987',
-            # '1988','1989','1990',
-            # '1991','1992','1993',
-            # '1994','1995','1996',
-            # '1997','1998','1999',
-            # '2000','2001','2002',
-            # '2003','2004','2005',
-            # '2006','2007','2008',
-            # '2009','2010','2011',
-            # '2012','2013','2014',
-            # '2015','2016','2017',
-            # '2018'
-            # '2019'
+            '1979','1980','1981',
+            '1982','1983','1984',
+            '1985','1986','1987',
+            '1988','1989','1990',
+            '1991','1992','1993',
+            '1994','1995','1996',
+            '1997','1998','1999',
+            '2000','2001','2002',
+            '2003','2004','2005',
+            '2006','2007','2008',
+            '2009','2010','2011',
+            '2012','2013','2014',
+            '2015','2016','2017',
+            '2018','2019'
         ]
 
 # The format of the data
