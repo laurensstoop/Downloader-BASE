@@ -14,13 +14,13 @@ timestamp() {
 
 ### Setting everything up
 # Set the directories
-dir_in="/media/DataStager1/ERA5/europe/"
-dir_out="/media/DataStager1/ERA5/base/"
+dir_in="/media/DataStager2/ERA5/europe/"
+dir_out="/media/DataDrive/ERA5-EU_BASE/"
 #dir_out="/media/DataDrive/ERA5/ERA5-EU_BASE/"
 
 # The variables to run over
-var='ssrd' #' t2m wspd100m wspd fdif fdir mpsl d2m rh fal fsr'
-years='2007' #'1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019'
+var='ro' #'ssrd t2m wspd100m wspd fdif fdir mpsl d2m rh fal fsr sro ro'
+years='1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019' 
 
 # Generate a template for setting the grid according to conventions
 #cdo -f nc -random,n320 ${dir_in}template.nc

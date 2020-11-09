@@ -15,10 +15,11 @@ import numpy as np
 import datetime
 import os.path
 import xarray as xr
+import pandas as pd
 
 # define the storage location
-path_from = '/media/DataStager1/ERA5/origin_nc/'
-path_save = '/media/DataStager1/ERA5/europe/'
+path_from = '/media/DataStager2/ERA5/origin_nc/'
+path_save = '/media/DataStager2/ERA5/europe/'
 
 
 # define the variables to run over (short name)
@@ -28,31 +29,32 @@ variable_names = [
         # 'fdir',
         # 'fsr',
         # 'mpsl', 
-        'ssrd', 
+        # 'ssrd', 
         # 't2m', 
         # 'wspd',
         # 'wspd100m',
         # 'rh',
-        # 'fdif'
+        # 'fdif',
+        'ro',
+        # 'sro'
         ]
 
 # The years we want to download
 years = [   
-            # '1979','1980','1981',
-            # '1982','1983','1984',
-            # '1985','1986','1987',
-            # '1988','1989','1990',
-            # '1991','1992','1993',
-            # '1994','1995','1996',
-            # '1997','1998','1999',
-            # '2000','2001','2002',
-            # '2003','2004','2005',
-            # '2006','2007','2008',
-            # '2009','2010','2011',
-            # '2012','2013','2014',
-            # '2015','2016','2017',
-            # '2018','2019'
-            '2007'
+            '1979','1980','1981',
+            '1982','1983','1984',
+            '1985','1986','1987',
+            '1988','1989','1990',
+            '1991','1992','1993',
+            '1994','1995','1996',
+            '1997','1998','1999',
+            '2000','2001','2002',
+            '2003','2004','2005',
+            '2006','2007','2008',
+            '2009','2010','2011',
+            '2012','2013','2014',
+            '2015','2016','2017',
+            '2018','2019'
         ]
 
 
@@ -195,7 +197,31 @@ for year in years:
                         long_name = 'time',
                         standard_name = 'time')
                           
+                # Catch therunoff and surface runoff
+            elif var_name ==  'ro' or var_name ==  'sro':
+                
+                # Open the file
+                ds = xr.open_dataset(path_from+'ERA5-EU_'+var_name+'_'+year+'.nc')
+            
+                
+                # Fixing the broken time axis
+                dt = ds.stack(time_new = ['time','step']).reset_index('time_new')
+                dt['time_new'] = ds.stack(time_new = ['time','step']).reset_index('time_new').valid_time
                                 
+                # We drop useless variables
+                ds2 = dt.drop([ 'step', 'number', 'surface', 'valid_time', 'time'])
+                
+                # rename the new time axis                
+                ds2 = ds2.rename({'time_new':'time'})
+                
+                # Update the time variable attributes
+                ds2.time.attrs.update(
+                        long_name = 'time',
+                        standard_name = 'time')
+                
+                # Now we select only the year we want (there is some overlap due to the timestep definition)
+                ds2 = ds2.sel(time=slice(year+'-01-01', year+'-12-31'))
+                
             # Catch the humidity
             elif var_name == 'rh':
                 
