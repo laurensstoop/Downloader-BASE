@@ -21,20 +21,20 @@ import xarray as xr
 import subprocess
 
 # define the storage location
-path_from = '/media/DataStager1/ERA5/origin/'
+path_from = '/media/DataStager2/ERA5/origin/'
 path_save = '/media/DataStager1/ERA5/temp/'
 path_store = '/media/DataDrive/ERA5BE-EU_BASE/'
 
 
 # define the variables to run over (short name)
 variable_names = [
-        'ssrd', 
+        # 'ssrd', 
         # 't2m', 
         # 'wspd', 
         # 'wspd100m', 
         # 'mpsl', 
         # 'ro',
-        # 'sro'
+        'sro'
         ]
 
 # The years we want to download
@@ -197,11 +197,11 @@ for year in years:
             
                 
                 # Fixing the broken time axis
-                dt = ds.stack(time_new = ['time','step']).reset_index('time_new')
-                dt['time_new'] = ds.stack(time_new = ['time','step']).reset_index('time_new').valid_time
+                dtime = ds.stack(time_new = ['time','step']).reset_index('time_new')
+                dtime['time_new'] = ds.stack(time_new = ['time','step']).reset_index('time_new').valid_time
                                 
                 # We drop useless variables
-                ds2 = dt.drop([ 'step', 'number', 'surface', 'valid_time', 'time'])
+                ds2 = dtime.drop([ 'step', 'number', 'surface', 'valid_time', 'time'])
                 
                 # rename the new time axis                
                 ds2 = ds2.rename({'time_new':'time'})
@@ -251,11 +251,11 @@ for year in years:
                 ds.load()
                 
                 # Fixing the broken time axis
-                dt = ds.stack(time_new = ['time','step']).reset_index('time_new')
-                dt['time_new'] = ds.stack(time_new = ['time','step']).reset_index('time_new').valid_time
+                dtime = ds.stack(time_new = ['time','step']).reset_index('time_new')
+                dtime['time_new'] = ds.stack(time_new = ['time','step']).reset_index('time_new').valid_time
                                 
                 # We drop useless variables
-                ds2 = dt.drop([ 'step', 'number', 'surface', 'valid_time', 'time'])
+                ds2 = dtime.drop([ 'step', 'number', 'surface', 'valid_time', 'time'])
                 
                 # rename the new time axis                
                 ds2 = ds2.rename({'time_new':'time'})

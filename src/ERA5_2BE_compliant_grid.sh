@@ -38,27 +38,27 @@ do
 
         # Rename the lat, lon dimensions
         echo "Rename lat, lon"
-        ncrename -d longitude,lon -d latitude,lat -v longitude,lon -v latitude,lat ${dir_in}${fname} ${dir_in}tmpERA${var}${year}1.nc
+        ncrename -d longitude,lon -d latitude,lat -v longitude,lon -v latitude,lat ${dir_in}${fname} ${dir_in}tmpERA${V}${Y}1.nc
 
         # Reorder dimensions (with a normal latitude
         echo "Reorder the dimenstions"
-        ncpdq -a time,-lat,lon ${dir_in}tmpERA${var}${year}1.nc ${dir_in}tmpERA${var}${year}12.nc
+        ncpdq -a time,-lat,lon ${dir_in}tmpERA${V}${Y}1.nc ${dir_in}tmpERA${V}${Y}12.nc
 
         # Set the grid to the N320 Grid with CF conventions
         echo "Set the grid to the defined one"
-        cdo -setgrid,${dir_in}template-EU.nc ${dir_in}tmpERA${var}${year}12.nc ${dir_in}tmpERA${var}${year}f_${V}.nc
+        cdo -setgrid,${dir_in}template-EU.nc ${dir_in}tmpERA${V}${Y}12.nc ${dir_in}tmpERA${V}${Y}f_${V}.nc
        
         # Rename the attributes and set the variables attributes
-        ncatted -O -a map_area,global,o,c,"Europe" -h ${dir_in}tmpERA${var}${year}f_${V}.nc
-        ncatted -O -a experiment,global,o,c,"Model: ERA5" -h ${dir_in}tmpERA${var}${year}f_${V}.nc
-        ncatted -O -a author,global,a,c,"; Laurens Stoop, UU/KNMI/TenneT" -h ${dir_in}tmpERA${var}${year}f_${V}.nc
-        ncatted -O -a history,global,d,, -h ${dir_in}tmpERA${var}${year}f_${V}.nc
+        ncatted -O -a map_area,global,o,c,"Europe" -h ${dir_in}tmpERA${V}${Y}f_${V}.nc
+        ncatted -O -a experiment,global,o,c,"Model: ERA5" -h ${dir_in}tmpERA${V}${Y}f_${V}.nc
+        ncatted -O -a author,global,a,c,"; Laurens Stoop, UU/KNMI/TenneT" -h ${dir_in}tmpERA${V}${Y}f_${V}.nc
+        ncatted -O -a history,global,d,, -h ${dir_in}tmpERA${V}${Y}f_${V}.nc
 
         # Setting the new file name and directory
-        ncks -h -A ${dir_in}tmpERA${var}${year}f_${V}.nc ${dir_out}${fname}
+        ncks -h -A ${dir_in}tmpERA${V}${Y}f_${V}.nc ${dir_out}${fname}
 
         # Clean up shit
-        rm ${dir_in}tmpERA${var}${year}*.nc
+        rm ${dir_in}tmpERA${V}${Y}*.nc
         rm ${dir_in}${fname}
     done
 done

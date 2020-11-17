@@ -31,14 +31,18 @@ variables = [
             # '10m_v_component_of_wind',
             # '100m_u_component_of_wind',
             # '100m_v_component_of_wind',
-            '2m_dewpoint_temperature',
-            'total_sky_direct_solar_radiation_at_surface',
-            'forecast_surface_roughness',
             # 'mean_sea_level_pressure',
             # 'runoff',
-            # 'surface_runoff',
-            # 'forecast_albedo' 
+            'surface_runoff',
             ]
+
+#not really used parameters:
+            # '2m_dewpoint_temperature',
+            # 'forecast_surface_roughness',
+            # 'total_sky_direct_solar_radiation_at_surface',
+            # 'forecast_albedo' 
+            
+            
 # define the variables to run over (short name)
 variable_names = [
         # 'ssrd', 
@@ -47,14 +51,17 @@ variable_names = [
         # 'v10', 
         # 'u100m', 
         # 'v100m',
-        'd2m',
-        'fdir',
-        'fsr',
-        # 'mpsl', 
+        # 'mpsl',
         # 'ro',
-        # 'sro',
-        # 'fal'
+        'sro',
         ]
+
+#not really used parameters:
+            # 'd2m',
+            # 'fdir',
+            # 'fsr',
+            # 'fal'
+
 
 # The years we want to download
 years = [   
