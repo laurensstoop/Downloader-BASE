@@ -22,8 +22,7 @@ import datetime as dt
 import os.path
 
 # define the storage location
-#file_path = '/media/DataDrive/ERA5/origin/'
-file_path = '/media/DataGate1/CORDEX-EU/origin/'
+file_path = '/media/DataGate1/CORDEX-EU/origin_RCA/'
 
 
 experiment ='rcp_8_5' # 'historical' 'rcp_2_6' 'rcp_4_5' 'rcp_8_5'
@@ -35,7 +34,8 @@ years = [
             # '1960', '1961', '1962',
             # '1963', '1964', '1965',
             # '1966', '1967', '1968',
-            # '1969', '1970', '1971',
+            # '1969', 
+            # '1970', '1971',
             # '1972', '1973', '1974',
             # '1975', '1976', '1977',
             # '1978', '1979', '1980',
@@ -82,6 +82,19 @@ years = [
             '2099', '2100'
             ]
 
+"""
+Combo's used (only used combo's that have all scenario's available in one experiment'
+
+EC-Earth (r12i1p1): 
+    RACMO  (1950 -- 2100)
+    RCA (1970 -- 2100)
+
+
+"""
+
+GCM_model = 'ichec_ec_earth'
+RCM_model = 'smhi_rca4' # smhi_rca4 knmi_racmo22e
+
 
 
 #%%
@@ -119,11 +132,11 @@ for year in years:
                 'horizontal_resolution': '0_11_degree_x_0_11_degree',
                 'temporal_resolution': '3_hours',
                 'variable': 'surface_solar_radiation_downwards',
-                'gcm_model': 'ichec_ec_earth',
-                'rcm_model': 'knmi_racmo22e',
+                'gcm_model': GCM_model,
+                'rcm_model': RCM_model,
                 'ensemble_member': 'r12i1p1',
                 'start_year': year,
-                'end_year': str(int(year)+1),
+                'end_year': year, #  str(int(year)+1),
                 'format': 'zip',
             },
             file)
@@ -147,8 +160,8 @@ for year in years:
                 'horizontal_resolution': '0_11_degree_x_0_11_degree',
                 'temporal_resolution': '3_hours',
                 'variable': '2m_air_temperature',
-                'gcm_model': 'ichec_ec_earth',
-                'rcm_model': 'knmi_racmo22e',
+                'gcm_model': GCM_model,
+                'rcm_model': RCM_model,
                 'ensemble_member': 'r12i1p1',
                 'start_year': year,
                 'end_year': year,
@@ -175,8 +188,8 @@ for year in years:
                 'horizontal_resolution': '0_11_degree_x_0_11_degree',
                 'temporal_resolution': '3_hours',
                 'variable': '10m_wind_speed',
-                'gcm_model': 'ichec_ec_earth',
-                'rcm_model': 'knmi_racmo22e',
+                'gcm_model': GCM_model,
+                'rcm_model': RCM_model,
                 'ensemble_member': 'r12i1p1',
                 'start_year': year,
                 'end_year': year,
