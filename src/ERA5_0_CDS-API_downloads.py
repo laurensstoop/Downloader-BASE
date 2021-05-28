@@ -28,12 +28,13 @@ variables = [
             # 'surface_solar_radiation_downwards',
             # '2m_temperature',
             # '10m_u_component_of_wind',
-            # '10m_v_component_of_wind',
+            '10m_v_component_of_wind',
             # '100m_u_component_of_wind',
             # '100m_v_component_of_wind',
             # 'mean_sea_level_pressure',
             # 'runoff',
-            'surface_runoff',
+            # 'surface_runoff',
+            # '2m_dewpoint_temperature',
             ]
 
 #not really used parameters:
@@ -48,12 +49,13 @@ variable_names = [
         # 'ssrd', 
         # 't2m', 
         # 'u10', 
-        # 'v10', 
+        'v10', 
         # 'u100m', 
         # 'v100m',
         # 'mpsl',
         # 'ro',
-        'sro',
+        #'sro',
+            # 'd2m',
         ]
 
 #not really used parameters:
@@ -65,16 +67,17 @@ variable_names = [
 
 # The years we want to download
 years = [   
-            '1950', '1951', '1952',
-            '1953', '1954', '1955',
-            '1956', '1957', '1958',
-            '1959', '1960', '1961',
-            '1962', '1963', '1964',
-            '1965', '1966', '1967',
-            '1968', '1969', '1970',
-            '1971', '1972', '1973',
-            '1974', '1975', '1976',
-            '1977', '1978'
+    '1992'
+            # '1950', '1951', '1952',
+            # '1953', '1954', '1955',
+            # '1956', '1957', '1958',
+            # '1959', '1960', '1961',
+            # '1962', '1963', '1964',
+            # '1965', '1966', '1967',
+            # '1968', '1969', '1970',
+            # '1971', '1972', '1973',
+            # '1974', '1975', '1976',
+            # '1977', '1978'
             # '1979','1980','1981',
             # '1982','1983','1984',
             # '1985','1986','1987',
@@ -100,8 +103,8 @@ def download_function(V, Y, F):
         # The retrieve function
     c.retrieve(
         # Dataset to download either the basic set (reanalysis at a single level) or the back-extension set
-        # 'reanalysis-era5-single-levels',  
-        'reanalysis-era5-single-levels-preliminary-back-extension',
+        'reanalysis-era5-single-levels',  
+        # 'reanalysis-era5-single-levels-preliminary-back-extension',
         {
             # Variable selection based on input
             'variable':V,
