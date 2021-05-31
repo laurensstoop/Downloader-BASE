@@ -21,48 +21,51 @@ import xarray as xr
 import subprocess
 
 # define the storage location
-path_from = '/media/DataStager2/ERA5/origin/'
+path_from = '/media/DataStager1/ERA5/origin/'
 path_save = '/media/DataStager1/ERA5/temp/'
-path_store = '/media/DataDrive/ERA5BE-EU_BASE/'
+path_store = '/media/DataStager1/ERA5/store/'
+# path_store = '/media/DataDrive/ERA5BE-EU_BASE/'
 
 
 # define the variables to run over (short name)
 variable_names = [
-        # 'ssrd', 
-        # 't2m', 
-        # 'wspd', 
-        # 'wspd100m', 
-        # 'mpsl', 
-        # 'ro',
-        'sro'
+        'ssrd', 
+        't2m', 
+        'wspd', 
+        'wspd100m', 
+        'mpsl', 
+        'ro',
+        'sro',
+        'd2m'
         ]
 
-# The years we want to download
-years = [  
-            '1950', '1951', '1952',
-            '1953', '1954', '1955',
-            '1956', '1957', '1958',
-            '1959', '1960', '1961',
-            '1962', '1963', '1964',
-            '1965', '1966', '1967',
-            '1968', '1969', '1970',
-            '1971', '1972', '1973',
-            '1974', '1975', '1976',
-            '1977', '1978'
-            # '1979','1980','1981',
-            # '1982','1983','1984',
-            # '1985','1986','1987',
-            # '1988','1989','1990',
-            # '1991','1992','1993',
-            # '1994','1995','1996',
-            # '1997','1998','1999',
-            # '2000','2001','2002',
-            # '2003','2004','2005',
-            # '2006','2007','2008',
-            # '2009','2010','2011',
-            # '2012','2013','2014',
-            # '2015','2016','2017',
-            # '2018','2019'
+# The years we want to clean
+years = [ 
+            # '1950', '1951', '1952',
+            # '1953', '1954', '1955',
+            # '1956', '1957', '1958',
+            # '1959', '1960', '1961',
+            # '1962', '1963', '1964',
+            # '1965', '1966', '1967',
+            # '1968', '1969', '1970',
+            # '1971', '1972', '1973',
+            # '1974', '1975', '1976',
+            # '1977', '1978',
+            # '1979', '1980', '1981',
+            # '1982', '1983', '1984',
+            # '1985', '1986', '1987',
+            # '1988', '1989', '1990',
+            # '1991', '1992', '1993',
+            # '1994', '1995', '1996',
+            # '1997', '1998', '1999',
+            # '2000', '2001', '2002',
+            # '2003', '2004', '2005',
+            # '2006', '2007', '2008',
+            # '2009', '2010', '2011',
+            # '2012', '2013', '2014',
+            # '2015', '2016', '2017',
+            # '2018', '2019', 
+            '2020'     
         ]
 
 
@@ -166,7 +169,7 @@ for year in years:
                         units = 'm s**-1')
                 
             # Catch the (dewpoint) temperature
-            elif var_name == 't2m':
+            elif var_name == 't2m' or var_name == 'd2m':
                 
                 # Open the file
                 ds = xr.open_mfdataset(path_from+'ERA5-EU_'+var_name+'_'+year+'.grib',combine='by_coords', engine='cfgrib', decode_cf=True)
@@ -302,7 +305,7 @@ for year in years:
             # =============================================================================
             
             # We call the subprocess
-            subprocess.call("/home/stoop/Documents/Project/Downloader-BASE/src/ERA5_2BE_compliant_grid.sh %s %s %s %s" %(path_save, path_store, var_name, year), shell=True)
+            # subprocess.call("/home/stoop/Documents/Project/Downloader-BASE/src/ERA5_2_grid.sh %s %s %s %s" %(path_save, path_store, var_name, year), shell=True)
             
             # let the user know
             print('NOTIFY: Finished for '+var_name+' in '+year)
