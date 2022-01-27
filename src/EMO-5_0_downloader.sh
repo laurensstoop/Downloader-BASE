@@ -1,0 +1,9 @@
+wget -v https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-EFAS/EMO-5-pd_1990_2019.nc 
+wget -v https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-EFAS/EMO-5-pr6_1990_2019.nc
+wget -v https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-EFAS/EMO-5-pr_1990_2019.nc
+wget -v https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-EFAS/EMO-5-rg_1990_2019.nc
+wget -v https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-EFAS/EMO-5-ta6_1990_2019.nc
+wget -v https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-EFAS/EMO-5-tn_1990_2019.nc
+wget -v https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-EFAS/EMO-5-tx_1990_2019.nc
+wget -v https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-EFAS/EMO-5-ws_1990_2019.nc
+wget -v https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-EFAS/copyright.txt
