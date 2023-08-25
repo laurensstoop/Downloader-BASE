@@ -50,9 +50,9 @@ NCC-NorESM1-M:
 
 """
 
-GCM_model = 'cnrm_cerfacs_cm5'  # ichec_ec_earth, mohc_hadgem2_es, cnrm_cerfacs_cm5, mpi_esm_lr, ncc_noresm1_m
+GCM_model = 'ichec_ec_earth'  # ichec_ec_earth, mohc_hadgem2_es, cnrm_cerfacs_cm5, mpi_esm_lr, ncc_noresm1_m
 RCM_model = 'knmi_racmo22e' # smhi_rca4, knmi_racmo22e, dmi_hirham5, gerics_remo2015
-ENSEMBLE_member = 'r1i1p1'
+ENSEMBLE_member = 'r12i1p1'
 
 
 # define the storage location
@@ -220,3 +220,31 @@ for year in years:
                 'format': 'zip',
             },
             file)
+        
+# # Retrieve 500hPa Geopot
+#     file=file_path+'CORDEX-EU_'+experiment+'_500hPaGeopot_'+year+'.zip'
+    
+#     # Check if file exist to allow for easy redo
+#     if os.path.isfile(file) == True:
+        
+#         # Tell us the file exist
+#         print('NOTIFY: this file was allready done! '+file)
+    
+#     # if file doesn't exist, we download it
+#     elif os.path.isfile(file) == False:
+#         c.retrieve(
+#             'projections-cordex-domains-single-levels',
+#             {
+#                 'domain': 'europe',
+#                 'experiment': experiment,
+#                 'horizontal_resolution': '0_11_degree_x_0_11_degree',
+#                 'variable': '500hpa_geopotential_height',
+#                 'gcm_model': GCM_model,
+#                 'rcm_model': RCM_model,
+#                 'temporal_resolution': 'daily_mean',
+#                 'ensemble_member': ENSEMBLE_member,
+#                 'start_year': year,
+#                 'end_year': str(int(year)+1),
+#                 'format': 'zip',
+#             },
+#             file)
