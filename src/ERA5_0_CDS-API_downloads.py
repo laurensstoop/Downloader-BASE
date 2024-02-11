@@ -20,7 +20,8 @@ import datetime as dt
 import os.path
 
 # define the storage location
-file_path = '/media/DataGate3/ERA5/origin/'
+# file_path = '/media/DataGate3/ERA5/origin/'
+file_path = '/media/stoop/DataGate2/ERA5/origin/'
 
 # The format of the data
 FORMAT = 'netcdf'
@@ -28,15 +29,15 @@ FORMAT = 'netcdf'
 
 # define the variables to run over (long name)
 variables = [ 
-            # 'surface_solar_radiation_downwards',
-            # '2m_temperature',
-            # '10m_u_component_of_wind',
-            # '10m_v_component_of_wind',
-            # '100m_u_component_of_wind',
-            # '100m_v_component_of_wind',
-            # 'mean_sea_level_pressure',
-            # 'runoff',
-            # 'surface_runoff',
+            'surface_solar_radiation_downwards',
+            '2m_temperature',
+            '10m_u_component_of_wind',
+            '10m_v_component_of_wind',
+            '100m_u_component_of_wind',
+            '100m_v_component_of_wind',
+            'mean_sea_level_pressure',
+            'runoff',
+            'surface_runoff',
             # '2m_dewpoint_temperature',
             # # # # not really used parameters:
             'forecast_surface_roughness',
@@ -46,18 +47,18 @@ variables = [
 
 # The years we want to download
 years = [   
-            '1950', '1951', '1952',
-            '1953', '1954', '1955',
-            '1956', '1957', '1958'
-            ,
-            '1959', '1960', '1961',
-            '1962', '1963', '1964',
-            '1965', '1966', '1967'
-            ,
-            '1968', '1969', '1970',
-            '1971', '1972', '1973',
-            '1974', '1975', '1976',
-            '1977', '1978'
+            # '1950', '1951', '1952',
+            # '1953', '1954', '1955',
+            # '1956', '1957', '1958'
+            # ,
+            # '1959', '1960', '1961',
+            # '1962', '1963', '1964',
+            # '1965', '1966', '1967'
+            # ,
+            # '1968', '1969', '1970',
+            # '1971', '1972', '1973',
+            # '1974', '1975', '1976',
+            # '1977', '1978'
             # ,
             # '1979', 
             # '1980', '1981',
@@ -74,7 +75,7 @@ years = [
             # '2012', '2013', '2014',
             # '2015', '2016', '2017',
             # '2018', '2019', '2020',
-            # '2021'        
+            '2021', '2022', '2023' 
             ]
 
 
@@ -84,8 +85,8 @@ def download_function(V, Y, M, F):
         # The retrieve function
     c.retrieve(
         # Dataset to download either the basic set (reanalysis at a single level) or the back-extension set
-        # 'reanalysis-era5-single-levels',
-        'reanalysis-era5-single-levels-preliminary-back-extension',
+        'reanalysis-era5-single-levels',
+        # 'reanalysis-era5-single-levels-preliminary-back-extension',
         {
             # Variable selection based on input
             'variable':V,
